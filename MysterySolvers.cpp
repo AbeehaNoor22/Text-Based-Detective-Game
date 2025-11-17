@@ -18,12 +18,16 @@ int main() {
 	system("pause");
 	return 0;
 }
-//main game with sub divisions on the bais of case-type
+//main game with sub divisions on the basis of case-type
 void DetectiveSeries() {
 	int num, lives = 3;
 	float chances = 3.0;
-	cout << "Welcome to Dective Series\n";
-	cout << "Enter '1' to play the murder case or '2' to play the missing child's case";
+	cout << "=============================\n";
+	cout << "Welcome to Detective Series\n";
+	cout << "=============================\n";
+	cout << "\nChoose a case to play: \n";
+
+	cout << "1.Murder case\n2.Missing child's case\nEnter your choice: ";
 	cin >> num;
 	switch (num) {
 	case 1:
@@ -46,136 +50,203 @@ void MurderCase(int& s) {
 		switch (random) {
 		case 1:
 			name = " Jack ";
+			break;
 		case 2:
 			name = " Liam ";
+			break;
 		case 3:
 			name = " Bob ";
+			break;
 		}
-		//text intro to the case 
-		cout << "The small coastal town of Westbridge was the kind of place where everyone knew everyone\n";
-		cout << "and nothing ever happened—until the night young " << name << "Harper was found dead near the old lighthouse\n";
-		cout << "cliffs.\n\n";
-		cout << "The town froze in shock.\n\nLiam was kind, quiet, always sketching in his notebook.\nHe had no enemies.\n\nOr so it seemed.\n";
-		cout << "Suspect:\n";
-		cout << "Mr. Hawthorne – The Lighthouse Keeper\nAaron Blake – The School Bully\nClara Harper – Liam’s Older Sister\nDaniel Reed – The Family Friend\n";
-		//beginning of the choices
+
+		// text intro to the case 
+		cout << "\n------------------\n";
+		cout << "THE MURDER CASE";
+		cout << "\n------------------\n\n";
+
+		cout << "The small coastal town of Westbridge was the kind of place where everyone knew everyone and nothing\n";
+		cout << "ever happened - until the night young" << name<< "Harper was found dead near the old lighthouse cliffs.\n\n";
+
+		cout << "The town froze in shock."<<name<<"was kind,quiet,always sketching in his notebook.He had no enemies.\n\n";
+		cout << "Or so it seemed.\n\n";
+
+		cout << "Suspects:\n";
+		cout << "1.Mr. Hawthorne - The Lighthouse Keeper\n";
+		cout << "2.Aaron Blake - The School Bully\n";
+		cout << "3.Clara Harper -"<<name<<"Older Sister\n";
+		cout << "4.Daniel Reed - The Family Friend\n\n";
+
+
 		//ROUND 1
-		cout << "ROUND 1 -- Investigate the Crime Scene\n";
+		cout << "\n----------------------------------------\n";
+		cout << "ROUND 1 -- Investigate the Crime Scene";
+		cout << "\n----------------------------------------\n";
 		cout << "Choose one:\n1. Inspect footprints\n2. Inspect sketchbook\n3. Inspect cliff edge\n4. Inspect bushes far from the scene\n";
-		cout << "Enter the number: ";
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "You find two sets of footprints: one child’s, one adult male.\n";
+			cout << "\nYou found two sets of footprints.one child's and one adult male.\n";
 			cout << "useful clue\n";
 			++s;
 		}
 		else if (v1 == 2) {
-			cout << "His last drawing shows a man near the lighthouse wearing a silver watch.\n";
+			cout << "\nHis last drawing shows a man near the lighthouse wearing a silver watch.\n";
 			cout << "useful clue\n";
 			++s;
 		}
 		else if (v1 == 3) {
-			cout << "Cliff edge gives nothing new.\n";
-			cout << "no useful observation made";
+			cout << "\nCliff edge gives nothing new.\n";
+			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 4) {
-			cout << "Bushes contain only seaweed.\n";
+			cout << "\nBushes contain only seaweed.\n";
 			cout << "no useful observation made";
 			--s;
 		}
 		else {
-			cout << "invalid\n";
+			cout << "Invalid choice\n";
 		}
 		cout << "your current lives are " << s << endl;
 		//ROUND 2
-		cout << "ROUND 2 -- First Suspect\n";
-		cout << "Choose who to question\n1.  Clara Harper\n2. Aaron Blake\n3. Mr. Hawthorne\n4. Daniel Reed\n";
-		cout << "Enter the number: ";
+		cout << "\n----------------------------------------\n";
+		cout << "ROUND 2 -- First Suspect";
+		cout << "\n----------------------------------------\n";
+		cout << "Choose who to question\n1.Clara Harper\n2.Aaron Blake\n3.Mr.Hawthorne\n4.Daniel Reed\n";
+		cout << "Enter your choice: ";
 		cin >> v2;
 		if (v2 == 3) {
-			cout << "He shows his pocket watch — old and rusted.\nIt does not match Liam’s drawing.\n";
-			cout << "useful clue";
+			cout << "\nHe shows his pocket watch ? old and rusted.\nIt does not match"<<name<<"drawing.\n";
+			cout << "Useful clue found!\n\n";
 			++s;
 		}
 		else if (v2 == 4) {
-			cout << "You notice he wears a shiny silver wristwatch just like the drawing.\n";
-			cout << "useful clue\n";
+			cout << "\nYou notice he wears a shiny silver wristwatch just like the drawing.\n";
+			cout << "Useful clue found!\n\n";
 			++s;
 		}
-		else if (v2 == 1 || v2 == 2) {
-			cout << "Just add emotional info but no clue.\n";
-			cout << "no useful observation made";
+		else if (v2 == 1) {
+			cout << "\nClara breaks down,saying"<<name<<"was her whole world.\n";
+			cout << "She says he was scared of something recently but never told her what.\n";
+			cout << "No useful clue found.\n\n";
+			--s;
+		}
+		else if (v2 == 2) {
+			cout << "Aaron looks guilty, but admits"<<name<<"once stood up to him.\n";
+			cout << "He says he would never actually hurt him… and seems genuinely shaken.\n";
+			cout << "No useful clue found.\n";
 			--s;
 		}
 		else {
-			cout << "invalid\n";
+			cout << "Invalid choice\n\n";
 		}
 		cout << "your current lives are " << s << endl;
 		//ROUND 3
-		cout << "ROUND 3 -- Search for the Missing Backpack\n";
-		cout << "Choose where to search\n1. Behind the lighthouse\n2. In Daniel Reed’s art studio\n3. At Liam’s home\n4. Under the wooden pier\n";
-		cout << "Enter the number: ";
+		cout << "\n----------------------------------------\n";
+		cout << "ROUND 3 -- Search for the Missing Backpack";
+		cout << "\n----------------------------------------\n";
+		cout << "Choose where to search\n1.Behind the lighthouse\n2.In Daniel Reed's art studio\n3.At"<<name<<"home\n4.Under the wooden pier\n";
+		cout << "Enter your choice: ";
 		cin >> v3;
 		if (v3 == 1) {
-			cout << "You find Liam’s backpack hidden under driftwood.\nInside is a letter he wrote about seeing someone steal money.\n";
-			cout << "useful clue";
+			cout << "You found"<<name<<"backpack hidden under driftwood.\nInside is a letter he wrote about seeing someone steal money.\n";
+			cout << "Useful clue found!";
 			++s;
 		}
 		else if (v3 == 2) {
 			cout << "You find a box of stolen community funds hidden in a cabinet.\n";
-			cout << "useful clue\n";
+			cout << "Useful clue found!\n";
 			++s;
 		}
 		else if (v3 == 3) {
 			cout << "Home contains nothing new.\n";
+			cout << "No useful clue found.\n";
 			--s;
 		}
 		else if (v3 == 4) {
 			cout << "Pier has only old nets.\n";
+			cout << "No useful clue found.\n";
 			--s;
 		}
 		else {
-			cout << "invalid\n";
+			cout << "Invalid choice\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 		//ROUND 4
-		cout << "ROUND 4 -- Final Interrogation\n";
-		cout << "Choose someone to confront\n1. Mr. Hawthorne\n2. Aaron\n3. Daniel\n4. Clara \n";
-		cout << "Enter the number: ";
+		cout << "\n----------------------------------------\n";
+		cout << "ROUND 4 -- Final Interrogation";
+		cout << "\n----------------------------------------\n";
+		cout << "Choose someone to confront\n1. Mr.Hawthorne\n2.Aaron\n3.Daniel\n4.Clara \n";
+		cout << "Enter your choice: ";
 		cin >> v4;
 		if (v4 == 3) {
-			cout << "You show all the gathered evidences\nHe confesses in panic.\n";
+			cout << "You showed all the gathered evidences\nHe confesses in panic.\n";
 			cout << "Congrats detective!! You found the Murderer";
 			++s;
 		}
-		else if (v4 == 1 || v4 == 2 || v4 == 4) {
-			cout << "Get emotional, but no confession.\n";
-			cout << "Wrong deduction detective:(\n";
+		 else if (v4 == 1) {
+			cout << "Mr. Hawthorne's eyes widen with pain as you accuse him.\n";
+			cout << "\"Liam was like a grandson to me,\" he whispers. \"I’d never harm that boy.\"\n";
+			cout << "Your accusation shakes him deeply, but reveals nothing new.\n";
+			cout << "Wrong deduction detective :(\n";
+			--s;
+		}
+		 else if (v4 == 2) {
+			cout << "Aaron steps back, looking terrified rather than angry.\n";
+			cout << "\"I know I bullied him... but I’d never kill him,\" he says with a cracked voice.\n";
+			cout << "He starts crying, offering no useful information.\n";
+			cout << "Wrong deduction detective :(\n";
+			--s;
+		}
+		 else if (v4 == 4) {
+			cout << "Clara stares at you in disbelief, tears welling in her eyes.\n";
+			cout << "\"You're accusing me of killing my own brother?\" she whispers.\n";
+			cout << "She breaks down completely, but gives no new clues.\n";
+			cout << "Wrong deduction detective :(\n";
 			--s;
 		}
 		else {
-			cout << "invalid\n";
+			cout << "Invalid\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 		//ROUND 5
-		cout << "FINAL ROUND -- Accuse the Killer\n";
-		cout << "Choose who you officially accuse:\n1. Daniel \n2. Aaron\n3. Mr. Hawthorne\n4. Clara \n";
-		cout << "Enter the number: ";
+		cout << "\n----------------------------------------\n";
+		cout << "FINAL ROUND -- Accuse the Killer";
+		cout << "\n----------------------------------------\n";
+		cout << "Choose who you officially accuse:\n1.Daniel \n2.Aaron\n3.Mr.Hawthorne\n4.Clara \n";
+		cout << "Enter your choice: ";
 		cin >> v5;
 		if (v5 == 1) {
-			cout << "YOU WIN THE CASE!\nJustice is served.\n";
+			cout << "\nYou step forward and accuse Daniel Reed.\n";
+			cout << "His face drains of color as the evidence is laid before him.\n";
+			cout << "\"I-I didn't mean for it to happen...\" he mutters.\n";
+			cout << "The officers take him away as the town finally exhales.\n";
+			cout << "\nYOU WIN THE CASE!\nJustice is served.\n";
 		}
-		else if (v5 == 1 || v5 == 2 || v5 == 4) {
-			cout << "YOU LOSE THE CASE!\nThe real killer escapes.\n";
-
+		else if (v5 == 2) {
+			cout << "\nAaron looks shocked and terrified.\n";
+			cout << "\"What? I bullied him, but I'd never kill him!\" he cries.\n";
+			cout << "The real killer watches quietly... and walks free.\n";
+			cout << "\nYOU LOSE THE CASE!\nThe real murderer escapes.\n";
+		}
+		else if (v5 == 3) {
+			cout << "\nMr. Hawthorne looks heartbroken.\n";
+			cout << "\"Detective..."<<name<<"was like family to me, \" he whispers.\n";
+			cout << "Your mistake lets the true killer slip away into the night.\n";
+			cout << "\nYOU LOSE THE CASE!\nThe real murderer escapes.\n";
+		}
+		else if (v5 == 4) {
+			cout << "\nClara collapses into tears, horrified by your accusation.\n";
+			cout << "\"I loved my brother more than anything...\" she cries.\n";
+			cout << "The real killer is long gone by the time you realize your error.\n";
+			cout << "\nYOU LOSE THE CASE!\nThe real murderer escapes.\n";
 		}
 		else {
-			cout << "invalid\n";
+			cout << "Invalid choice\n";
 		}
 	}
 }
-void MissingChild(float &s) {
+void MissingChild(float& s) {
 	int random, v1;
 	string name;
 	random = rand() % 3 + 1;
@@ -243,7 +314,7 @@ void MissingChild(float &s) {
 			--s;
 		}
 		else if (v1 == 4) {
-			cout << "It’s locked and empty.\n";
+			cout << "It?s locked and empty.\n";
 			cout << "no useful observation made";
 			--s;
 		}
@@ -252,7 +323,7 @@ void MissingChild(float &s) {
 		}
 		cout << "your current lives are " << s << endl;
 		//ROUND 3
-		cout << "SCENARIO 3 – Food Court\n";
+		cout << "SCENARIO 3 ? Food Court\n";
 		cout << "CCTV shows " << name << " entering the food court and then disappearing behind a pillar.\n";
 		cout << "What next?\n1. Ask random customers\n2. Check restaurant kitchens\n3. Inspect trash bins\n4. Interview the janitor\n";
 		cout << "Enter the number: ";
@@ -312,7 +383,7 @@ void MissingChild(float &s) {
 		}
 		cout << "your current lives are " << s << endl;
 		//ROUND 5
-		cout << "SCENARIO 5 – Service Corridor\n";
+		cout << "SCENARIO 5 ? Service Corridor\n";
 		cout << "You enter the narrow staff-only passage.\nFootsteps echo.\n";
 		cout << "What do you follow?\n1. A dropped mop\n2. The muddy shoe prints\n3. A vending machine\n4. The fire extinguisher area\n";
 		cout << "Enter the number: ";
@@ -323,7 +394,7 @@ void MissingChild(float &s) {
 			--s;
 		}
 		else if (v1 == 2) {
-			cout << "Prints match Ayan’s shoe size and lead deeper into the staff hallway.\n";
+			cout << "Prints match Ayan?s shoe size and lead deeper into the staff hallway.\n";
 			cout << "useful clue\n";
 			++s;
 		}
@@ -342,8 +413,8 @@ void MissingChild(float &s) {
 		}
 		cout << "your current lives are " << s << endl;
 		//ROUND 6
-		cout << "SCENARIO 6 – Camera Room Door\n";
-		cout << "You find a restricted door labeled “Security Access Only.”\n";
+		cout << "SCENARIO 6 ? Camera Room Door\n";
+		cout << "You find a restricted door labeled ?Security Access Only.?\n";
 		cout << "What do you do?\n1. Try to unlock it yourself\n2. Ask security to open it\n3. Knock repeatedly\n4. Ask Walk past it\n";
 		cout << "Enter the number: ";
 		cin >> v1;
@@ -402,7 +473,7 @@ void MissingChild(float &s) {
 		}
 		cout << "your current lives are " << s << endl;
 		//ROUND 8
-		cout << "SCENARIO 8 – Back Loading Dock\n";
+		cout << "SCENARIO 8 ? Back Loading Dock\n";
 		cout << "You reach a metal loading dock where delivery trucks park.\n";
 		cout << "Who do you talk to?\n1. The delivery driver standing near his truck\n2. Security guard (on break)\n3. Two workers chatting\n4. The cleaner\n";
 		cout << "Enter the number: ";
@@ -413,12 +484,12 @@ void MissingChild(float &s) {
 			++s;
 		}
 		else if (v1 == 2) {
-			cout << "He wasn’t watching this area.\n";
+			cout << "He wasn?t watching this area.\n";
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 3) {
-			cout << "They didn’t notice a child.\n";
+			cout << "They didn?t notice a child.\n";
 			cout << "no useful observation made";
 			--s;
 		}
@@ -432,7 +503,7 @@ void MissingChild(float &s) {
 		}
 		cout << "your current lives are " << s << endl;
 		//ROUND 9
-		cout << "SCENARIO 9 – Abandoned Storage Room\n";
+		cout << "SCENARIO 9 ? Abandoned Storage Room\n";
 		cout << "The storage room is dark and dusty.\n";
 		cout << "Choose your approach?\n1. Open the supply closet\n2. Inspect the ceiling\n3. Look under a table\n4. Search the old crates\n";
 		cout << "Enter the number: ";
@@ -462,9 +533,9 @@ void MissingChild(float &s) {
 		}
 		cout << "your current lives are " << s << endl;
 		//ROUND 10
-		cout << "SCENARIO 10 – The Final Door\n";
+		cout << "SCENARIO 10 ? The Final Door\n";
 		cout << "You hear a faint sound from the utility room ahead.";
-		cout << "What do you do?\n1. Shout loudly\n2. Kick the door\n3. Enter slowly and call " << name << "’s name\n4. Wait outside\n";
+		cout << "What do you do?\n1. Shout loudly\n2. Kick the door\n3. Enter slowly and call " << name << "?s name\n4. Wait outside\n";
 		cout << "Enter the number: ";
 		cin >> v1;
 		if (v1 == 1) {
@@ -480,8 +551,8 @@ void MissingChild(float &s) {
 		else if (v1 == 3) {
 			cout << name << " runs into your arms. He is safe and unharmed.\n";
 			cout << "You find Ayan hidden behind cleaning equipment.\n";
-			cout << "He followed the stranger because “they said they would show him something cool.\nSecurity arrives.";
-			cout << "The red-jacket person is caught exiting the mall.\nYOU WIN — The child is found, safe and alive.\n";
+			cout << "He followed the stranger because ?they said they would show him something cool.\nSecurity arrives.";
+			cout << "The red-jacket person is caught exiting the mall.\nYOU WIN ? The child is found, safe and alive.\n";
 
 		}
 		else if (v1 == 4) {
@@ -502,4 +573,3 @@ void MissingChild(float &s) {
 
 
 
-		
