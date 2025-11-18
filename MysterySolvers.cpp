@@ -8,8 +8,8 @@
 using namespace std;
 
 void DetectiveSeries();
-void MurderCase(int&);
-void MissingChild(float&);
+void MurderCase(int);
+void MissingChild(float);
 void waitSeconds(int sec);
 
 int main() {
@@ -48,11 +48,12 @@ void DetectiveSeries() {
 	}
 }
 //mystery murder case
-void MurderCase(int& s) {
+void MurderCase(int s) {
 	int random, v1, v2, v3, v4, v5;
+	char restarter;
 	string name;
 	random = rand() % 3 + 1;
-	while (s > 0) {
+	while (true) {
 		switch (random) {
 		case 1:
 			name = " Jack ";
@@ -76,8 +77,9 @@ void MurderCase(int& s) {
 
 		cout << "The town froze in shock." << name << "was kind,quiet,always sketching in his notebook.He had no enemies.\n\n"; waitSeconds(3);
 		cout << "Or so it seemed.\n\n"; waitSeconds(1);
-
-		cout << "Suspects:\n"; waitSeconds(1);
+		cout << "You are called on the scene as the detective.\n";
+		cout << "You initially have 3 lives; every correct choice increases your number of lives and every wrong choice decreases it.\n";
+		cout << "Following are your key suspects:\n"; waitSeconds(1);
 		cout << "1.Mr. Hawthorne - The Lighthouse Keeper\n"; waitSeconds(1);
 		cout << "2.Aaron Blake - The School Bully\n"; waitSeconds(1);
 		cout << "3.Clara Harper -" << name << "Older Sister\n"; waitSeconds(1);
@@ -97,29 +99,29 @@ void MurderCase(int& s) {
 		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "\nYou found two sets of footprints.one child's and one adult male.\n"; waitSeconds(1);
-			cout << "useful clue\n"; waitSeconds(1);
+			cout << "\nYou found two sets of male footprints.\n"; waitSeconds(1);
+			cout << "Useful clue!\nYour lives have increased by one!\n"; waitSeconds(1);
 			++s;
 		}
 		else if (v1 == 2) {
 			cout << "\nHis last drawing shows a man near the lighthouse wearing a silver watch.\n"; waitSeconds(1);
-			cout << "useful clue\n"; waitSeconds(1);
+			cout << "Useful clue!\nYour lives have increased by one!\n"; waitSeconds(1);
 			++s;
 		}
 		else if (v1 == 3) {
 			cout << "\nCliff edge gives nothing new.\n"; waitSeconds(1);
-			cout << "no useful observation made\n"; waitSeconds(1);
+			cout << "No useful observation made.\n Your lives decreased by one1\n"; waitSeconds(1);
 			--s;
 		}
 		else if (v1 == 4) {
 			cout << "\nBushes contain only seaweed.\n"; waitSeconds(1);
-			cout << "no useful observation made"; waitSeconds(1);
+			cout << "No useful observation made.\n Your lives decreased by one!\n"; waitSeconds(1);
 			--s;
 		}
 		else {
 			cout << "Invalid choice\n";
 		}
-		cout << "\n\nyour current lives are " << s << endl; waitSeconds(1);
+		cout << "\n\nYour current lives are " << s << endl; waitSeconds(1);
 		//ROUND 2
 		waitSeconds(1);
 		cout << "\n----------------------------------------\n";
@@ -132,32 +134,57 @@ void MurderCase(int& s) {
 		cout << "4.Daniel Reed\n"; waitSeconds(1);
 		cout << "Enter your choice: ";
 		cin >> v2;
-		if (v2 == 3) {
-			cout << "\nHe shows his pocket watch   old and rusted.\nIt does not match" << name << "drawing.\n"; waitSeconds(1);
-			cout << "Useful clue found!\n\n";
-			++s;
-		}
-		else if (v2 == 4) {
-			cout << "\nYou notice he wears a shiny silver wristwatch just like the drawing.\n"; waitSeconds(1);
-			cout << "Useful clue found!\n\n";
-			++s;
-		}
-		else if (v2 == 1) {
+
+		if (v2 == 1) {
 			cout << "\nClara breaks down,saying" << name << "was her whole world.\n";
 			cout << "She says he was scared of something recently but never told her what.\n"; waitSeconds(1);
-			cout << "No useful clue found.\n\n";
+			cout << "No useful clue found.\nYour lives decreased by one!\n\n";
 			--s;
 		}
 		else if (v2 == 2) {
 			cout << "\nAaron looks guilty, but admits" << name << "once stood up to him.\n";
 			cout << "He says he would never actually hurt him… and seems genuinely shaken.\n"; waitSeconds(1);
-			cout << "No useful clue found.\n";
+			cout << "No useful clue found.\nYour lives decreased by one!\n";
 			--s;
+		}
+		else if (v2 == 3) {
+			if (v1 == 1) {
+				cout << "You enquire for his shoes but their sole doesn't resembel those found in footprint trail, which confirms that it was not him.\n";
+				cout << "Useful clue found!\nYour lives have increased by one!\n\n";
+				++s;
+			}
+			else if (v1 == 2) {
+				cout << "\nHe shows his pocket watch old and rusted.\nIt does not match" << name << "drawing.\n"; waitSeconds(1);
+				cout << "Useful clue found.\nYour lives have increased by one!\n\n";
+				++s;
+			}
+			else if (v1 == 3 || v1 == 4) {
+				cout << "\nYou interrogate but he seems shaken and replies emotionally.\n"; waitSeconds(1);
+				cout << "No useful clue found.\nYour lives decreased by one!\n\n";
+				--s;
+			}
+		}
+		else if (v2 == 4) {
+			if (v1 == 1) {
+				cout << "You enquire for his shoes and their sole resembels those found in footprint trail.\n";
+				cout << "Useful clue found!\nYour lives have increased by one!\n\n";
+				++s;
+			}
+			else if (v1 == 2) {
+				cout << "\nYou notice he wears a shiny silver wristwatch just like the drawing.\n"; waitSeconds(1);
+				cout << "Useful clue found!\n\n";
+				++s;
+			}
+			else if (v1 == 3 || v1 == 4) {
+				cout << "\nYou interrogate but he seems carefree and answers in an anxious manner.\n"; waitSeconds(1);
+				cout << "Useful observation!\nYour lives have increased by one!\n\n";
+				++s;
+			}
 		}
 		else {
 			cout << "\nInvalid choice\n\n";
 		}
-		cout << "\nyour current lives are " << s << endl;
+		cout << "\nYour current lives are " << s << endl;
 		//ROUND 3
 		waitSeconds(1);
 		cout << "\n----------------------------------------\n";
@@ -194,7 +221,8 @@ void MurderCase(int& s) {
 		else {
 			cout << "\nInvalid choice\n";
 		}
-		cout << "\nyour current lives are " << s << endl;
+		cout << "\nYour current lives are " << s << endl;
+		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
 		//ROUND 4
 		waitSeconds(1);
 		cout << "\n----------------------------------------\n";
@@ -237,6 +265,7 @@ void MurderCase(int& s) {
 			cout << "\nInvalid\n";
 		}
 		cout << "\nyour current lives are " << s << endl;
+		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
 		//ROUND 5
 		waitSeconds(1);
 		cout << "\n----------------------------------------\n";
@@ -277,11 +306,16 @@ void MurderCase(int& s) {
 		else {
 			cout << "Invalid choice\n";
 		}
+		cout << "Enter 'N' to exit the game or 'Y' to continue\n";
+		cin >> restarter;
+		if (restarter == 'y' || restarter == 'Y') { continue; }
+		else if (restarter == 'n' || restarter == 'N') { break; }
 	}
 }
-void MissingChild(float& s) {
+void MissingChild(float s) {
 	int random, v1;
 	string name;
+	char restarter;
 	random = rand() % 3 + 1;
 	while (s > 0) {
 		switch (random) {
@@ -297,7 +331,7 @@ void MissingChild(float& s) {
 		}
 		//text intro to the case 
 		cout << "A 7-year-old girl," << name << ",vanished inside WestView Mall.\n"; waitSeconds(2);
-			cout << "CCTV shows her walking towards the main hall.\n";
+		cout << "CCTV shows her walking towards the main hall.\n";
 		waitSeconds(1);
 		//beginning of the choices
 		//ROUND 1	
@@ -324,7 +358,7 @@ void MissingChild(float& s) {
 			--s;
 		}
 		else if (v1 == 3) {
-			cout << "\nThe receptionist confirms " << name << " passed by heading toward the toy section.\n"; waitSeconds(1);
+			cout << "\nThe receptionist confirms " << name << " passed by this place.\n"; waitSeconds(1);
 			cout << "useful clue";
 			++s;
 		}
@@ -342,8 +376,8 @@ void MissingChild(float& s) {
 		cout << "\n--------------------------------\n";
 		cout << "SCENARIO 2 -- Toy Store";
 		cout << "\n--------------------------------\n"; waitSeconds(1);
-		cout << "The toy store manager says a child was seen holding a blue dinosaur toy.\n"; waitSeconds(1);
-		cout << "What do you do?\n";waitSeconds(1);
+		cout << "You enter the toy store,he manager says the child was seen holding a blue dinosaur toy.\n"; waitSeconds(1);
+		cout << "What do you do?\n"; waitSeconds(1);
 		cout << "1.Ask to see CCTV footage\n"; waitSeconds(1);
 		cout << "2.Search the shelves\n"; waitSeconds(1);
 		cout << "3.Talk to the cashier only\n"; waitSeconds(1);
@@ -411,6 +445,7 @@ void MissingChild(float& s) {
 			cout << "invalid\n";
 		}
 		cout << "\nyour current lives are " << s << endl;
+		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
 		//ROUND 4
 		waitSeconds(1);
 		cout << "\n--------------------------------\n";
@@ -430,7 +465,7 @@ void MissingChild(float& s) {
 			--s;
 		}
 		else if (v1 == 2) {
-			cout << "\nDoor camera shows"<<name<<"exiting with the red - jacket person.\n"; waitSeconds(1);
+			cout << "\nDoor camera shows" << name << "exiting with the red - jacket person.\n"; waitSeconds(1);
 			cout << "useful clue\n";
 			++s;
 		}
@@ -448,6 +483,7 @@ void MissingChild(float& s) {
 			cout << "invalid\n";
 		}
 		cout << "\nyour current lives are " << s << endl;
+		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
 		//ROUND 5
 		waitSeconds(1);
 		cout << "\n--------------------------------\n";
@@ -456,9 +492,9 @@ void MissingChild(float& s) {
 		cout << "You enter the narrow staff-only passage.\nFootsteps echo.\n"; waitSeconds(1);
 		cout << "What do you follow?\n"; waitSeconds(1);
 		cout << "1. A dropped mop\n"; waitSeconds(1);
-		cout<<"2.The muddy shoe prints\n";waitSeconds(1);
+		cout << "2.The muddy shoe prints\n"; waitSeconds(1);
 		cout << "3.A vending machine\n"; waitSeconds(1);
-		cout<<"4.The fire extinguisher area\n"; waitSeconds(1);
+		cout << "4.The fire extinguisher area\n"; waitSeconds(1);
 		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
@@ -485,6 +521,7 @@ void MissingChild(float& s) {
 			cout << "invalid\n";
 		}
 		cout << "\nyour current lives are " << s << endl;
+		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
 		//ROUND 6
 		waitSeconds(1);
 		cout << "\n--------------------------------\n";
@@ -522,6 +559,7 @@ void MissingChild(float& s) {
 			cout << "invalid\n";
 		}
 		cout << "\nyour current lives are " << s << endl;
+		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
 		//ROUND 7
 		waitSeconds(1);
 		cout << "\n--------------------------------\n";
@@ -532,7 +570,7 @@ void MissingChild(float& s) {
 		cout << "1.A wrapper\n"; waitSeconds(1);
 		cout << "2.A loose wire\n"; waitSeconds(1);
 		cout << "3.A trolley\n"; waitSeconds(1);
-		cout << "4."<< name <<"blue dinosaur toy\n"; waitSeconds(1);
+		cout << "4." << name << "blue dinosaur toy\n"; waitSeconds(1);
 		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
@@ -551,7 +589,7 @@ void MissingChild(float& s) {
 			--s;
 		}
 		else if (v1 == 4) {
-			cout <<"\n"<< name << " dropped this recently-he was here minutes ago.\n"; waitSeconds(1);
+			cout << "\n" << name << " dropped this recently-he was here minutes ago.\n"; waitSeconds(1);
 			cout << "useful clue";
 			++s;
 		}
@@ -559,6 +597,7 @@ void MissingChild(float& s) {
 			cout << "invalid\n";
 		}
 		cout << "your current lives are " << s << endl;
+		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
 		//ROUND 8
 		waitSeconds(1);
 		cout << "\n--------------------------------\n";
@@ -596,6 +635,7 @@ void MissingChild(float& s) {
 			cout << "invalid\n";
 		}
 		cout << "\nyour current lives are " << s << endl;
+		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
 		//ROUND 9
 		waitSeconds(1);
 		cout << "\n--------------------------------\n";
@@ -633,6 +673,7 @@ void MissingChild(float& s) {
 			cout << "invalid\n";
 		}
 		cout << "\nyour current lives are " << s << endl;
+		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
 		//ROUND 10
 		waitSeconds(1);
 		cout << "\n--------------------------------\n";
@@ -649,34 +690,34 @@ void MissingChild(float& s) {
 		if (v1 == 1) {
 			cout << "\nYour shout scares him; she hides again.\n"; waitSeconds(1);
 			cout << "You Lost The Case Detective!\n";
-			break;
 		}
 		else if (v1 == 2) {
 			cout << "\nNoise startles the child.\n"; waitSeconds(1);
 			cout << "You Lost The Case Detective!\n";
-			break;
 
 		}
 		else if (v1 == 3) {
-			cout<< name << " runs into your arms.He is safe and unharmed.\n"; waitSeconds(2);
+			cout << name << " runs into your arms.He is safe and unharmed.\n"; waitSeconds(2);
 			cout << "You find Ayan hidden behind cleaning equipment.\n"; waitSeconds(2);
 			cout << "He followed the stranger because  they said they would show him something cool.\nSecurity arrives."; waitSeconds(2);
-			cout << "The red-jacket person is caught exiting the mall.\nYOU WIN   The child is found, safe and alive.\n"; waitSeconds(2);
-			break;
+			cout << "The red-jacket person is caught exiting the mall.\nYOU WIN!! The child is found, safe and alive.\n"; waitSeconds(2);
+
 		}
 		else if (v1 == 4) {
 			cout << "\nTime slips away.\n"; waitSeconds(1);
 			cout << "no useful observation made"; waitSeconds(1);
 			cout << "Time out!";
-			break;
 
 		}
 		else {
 			cout << "invalid\n";
 		}
-		cout << "\nyour current lives are " << s << endl;
-	}
 
+		cout << "Enter 'N' to exit the game or 'Y' to continue\n";
+		cin >> restarter;
+		if (restarter == 'y' || restarter == 'Y') { continue; }
+		else if (restarter == 'n' || restarter == 'N') { break; }
+	}
 
 }
 
