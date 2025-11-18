@@ -90,10 +90,10 @@ void MurderCase(int& s) {
 		cout << "ROUND 1 -- Investigate the Crime Scene";
 		cout << "\n----------------------------------------\n"; waitSeconds(1);
 		cout << "Choose one:\n";
-		cout << "1.Inspect footprints\n"; waitSeconds(1); 
+		cout << "1.Inspect footprints\n"; waitSeconds(1);
 		cout << "2.Inspect sketchbook\n"; waitSeconds(1);
 		cout << "3.Inspect cliff edge\n"; waitSeconds(1);
-		cout<<"4.Inspect bushes far from the scene\n"; waitSeconds(1);
+		cout << "4.Inspect bushes far from the scene\n"; waitSeconds(1);
 		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
@@ -168,7 +168,7 @@ void MurderCase(int& s) {
 		cout << "1.Behind the lighthouse\n"; waitSeconds(1);
 		cout << "2.In Daniel Reed's art studio\n"; waitSeconds(1);
 		cout << "3.At" << name << "home\n"; waitSeconds(1);
-		cout<<"4.Under the wooden pier\n"; waitSeconds(1);
+		cout << "4.Under the wooden pier\n"; waitSeconds(1);
 		cout << "Enter your choice: ";
 		cin >> v3;
 		if (v3 == 1) {
@@ -204,7 +204,7 @@ void MurderCase(int& s) {
 		cout << "1. Mr.Hawthorne\n"; waitSeconds(1);
 		cout << "2.Aaron\n"; waitSeconds(1);
 		cout << "3.Daniel\n"; waitSeconds(1);
-		cout<<"4.Clara\n"; waitSeconds(1);
+		cout << "4.Clara\n"; waitSeconds(1);
 		cout << "Enter your choice: ";
 		cin >> v4;
 		if (v4 == 3) {
@@ -246,7 +246,7 @@ void MurderCase(int& s) {
 		cout << "1.Daniel \n"; waitSeconds(1);
 		cout << "2.Aaron\n"; waitSeconds(1);
 		cout << "3.Mr.Hawthorne\n"; waitSeconds(1);
-		cout<<"4.Clara \n"; waitSeconds(1);
+		cout << "4.Clara \n"; waitSeconds(1);
 		cout << "Enter your choice: ";
 		cin >> v5;
 		if (v5 == 1) {
@@ -296,212 +296,262 @@ void MissingChild(float& s) {
 			break;
 		}
 		//text intro to the case 
-		cout << "A 7-year-old girl," << name << ",vanished inside WestView Mall.\n";
-		cout << "CCTV shows her walking towards the main hall.\n";
+		cout << "A 7-year-old girl," << name << ",vanished inside WestView Mall.\n"; waitSeconds(2);
+			cout << "CCTV shows her walking towards the main hall.\n";
+		waitSeconds(1);
 		//beginning of the choices
-		//ROUND 1
+		//ROUND 1	
+		waitSeconds(1);
 		cout << "\n--------------------------------\n";
-		cout << "SCENARIO 1 -- Mall Entrance\n";
-		cout << "Where do you start?\n1. Go to the rooftop parking\n2. Inspect the elevators\n3. Check the Information Desk\n4. Check the emergency exit\n";
-		cout << "Enter the number: ";
+		cout << "SCENARIO 1 -- Mall Entrance";
+		cout << "\n--------------------------------\n";
+		waitSeconds(1);
+		cout << "Where do you start?\n";	waitSeconds(1);
+		cout << "1.Go to the rooftop parking\n";	waitSeconds(1);
+		cout << "2.Inspect the elevators\n";	waitSeconds(1);
+		cout << "3.Check the Information Desk\n";	waitSeconds(1);
+		cout << "4.Check the emergency exit\n";	waitSeconds(1);
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "Security denies any child there.\n";
+			cout << "\nSecurity denies any child there.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 2) {
-			cout << "Elevators show no sign of him.\n";
+			cout << "\nElevators show no sign of him.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 3) {
-			cout << "The receptionist confirms " << name << " passed by heading toward the toy section.\n";
+			cout << "\nThe receptionist confirms " << name << " passed by heading toward the toy section.\n"; waitSeconds(1);
 			cout << "useful clue";
 			++s;
 		}
 		else if (v1 == 4) {
-			cout << "Bushes contain only seaweed.\n";
+			cout << "\nBushes contain only seaweed.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else {
-			cout << "invalid\n";
+			cout << "Invalid\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 		//ROUND 2
-		cout << "SCENARIO 2 -- Toy Store\n";
-		cout << "The toy store manager says a child was seen holding a blue dinosaur toy.\n";
-		cout << "What do you do?\n1. Ask to see CCTV footage\n2. Search the shelves\n3. Talk to the cashier only\n4. Check the back storage\n";
-		cout << "Enter the number: ";
+		waitSeconds(1);
+		cout << "\n--------------------------------\n";
+		cout << "SCENARIO 2 -- Toy Store";
+		cout << "\n--------------------------------\n"; waitSeconds(1);
+		cout << "The toy store manager says a child was seen holding a blue dinosaur toy.\n"; waitSeconds(1);
+		cout << "What do you do?\n";waitSeconds(1);
+		cout << "1.Ask to see CCTV footage\n"; waitSeconds(1);
+		cout << "2.Search the shelves\n"; waitSeconds(1);
+		cout << "3.Talk to the cashier only\n"; waitSeconds(1);
+		cout << "4.Check the back storage\n"; waitSeconds(1);
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "Footage shows " << name << " walking toward the food court behind someone in a red jacket.\n";
+			cout << "\nFootage shows " << name << " walking toward the food court behind someone in a red jacket.\n"; waitSeconds(1);
 			cout << "major clue\n";
 			++s;
 		}
 		else if (v1 == 2) {
-			cout << "Toys are everywhere.\n";
+			cout << "\nToys are everywhere.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 3) {
-			cout << "She saw nothing.\n";
+			cout << "\nShe saw nothing.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else if (v1 == 4) {
-			cout << "It s locked and empty.\n";
+			cout << "\nIt's locked and empty.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else {
 			cout << "invalid\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 		//ROUND 3
-		cout << "SCENARIO 3   Food Court\n";
-		cout << "CCTV shows " << name << " entering the food court and then disappearing behind a pillar.\n";
-		cout << "What next?\n1. Ask random customers\n2. Check restaurant kitchens\n3. Inspect trash bins\n4. Interview the janitor\n";
-		cout << "Enter the number: ";
+		waitSeconds(1);
+		cout << "\n--------------------------------\n";
+		cout << "SCENARIO 3 -- Food Court";
+		cout << "\n--------------------------------\n"; waitSeconds(1);
+		cout << "CCTV shows " << name << " entering the food court and then disappearing behind a pillar.\n"; waitSeconds(1);
+		cout << "What next?\n"; waitSeconds(1);
+		cout << "1.Ask random customers\n"; waitSeconds(1);
+		cout << "2.Check restaurant kitchens\n"; waitSeconds(1);
+		cout << "3.Inspect trash bins\n"; waitSeconds(1);
+		cout << "4.Interview the janitor\n"; waitSeconds(1);
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "Too many people; no solid info.\n";
+			cout << "\nToo many people; no solid info.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 2) {
-			cout << "Employees haven't seen him.\n";
+			cout << "\nEmployees haven't seen him.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 3) {
-			cout << "Only waste\n";
+			cout << "\nOnly waste\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else if (v1 == 4) {
-			cout << "He saw " << name << " follow the red-jacket person toward the arcade.\n";
+			cout << "\nHe saw " << name << " follow the red-jacket person toward the arcade.\n"; waitSeconds(1);
 			cout << "useful clue";
 			++s;
 		}
 		else {
 			cout << "invalid\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 		//ROUND 4
-		cout << "SCENARIO 4 -- Arcade Center\n";
-		cout << "Inside the arcade, lights flash loudly. You ask the operator.\nHe says " << name << " entered but never played any game.\n";
-		cout << "What do you check?\n1. Token machine\n2. The back emergency door\n3. Prize counter\n4. VR section\n";
-		cout << "Enter the number: ";
+		waitSeconds(1);
+		cout << "\n--------------------------------\n";
+		cout << "SCENARIO 4 -- Arcade Center";
+		cout << "\n--------------------------------\n"; waitSeconds(1);
+		cout << "Inside the arcade, lights flash loudly. You ask the operator.\nHe says " << name << " entered but never played any game.\n"; waitSeconds(1);
+		cout << "What do you check?\n"; waitSeconds(1);
+		cout << "1.Token machine\n"; waitSeconds(1);
+		cout << "2.The back emergency door\n"; waitSeconds(1);
+		cout << "3.Prize counter\n"; waitSeconds(1);
+		cout << "4.VR section\n"; waitSeconds(1);
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "Machine contains no evidence.\n";
+			cout << "\nMachine contains no evidence.\n";
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 2) {
-			cout << "Door camera shows Ayan exiting with the red-jacket person.\n";
+			cout << "\nDoor camera shows"<<name<<"exiting with the red - jacket person.\n"; waitSeconds(1);
 			cout << "useful clue\n";
 			++s;
 		}
 		else if (v1 == 3) {
-			cout << "Worker saw nothing.\n";
+			cout << "\nWorker saw nothing.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 4) {
-			cout << "Crowded; no trace of him.\n";
+			cout << "\nCrowded; no trace of him.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else {
 			cout << "invalid\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 		//ROUND 5
-		cout << "SCENARIO 5   Service Corridor\n";
-		cout << "You enter the narrow staff-only passage.\nFootsteps echo.\n";
-		cout << "What do you follow?\n1. A dropped mop\n2. The muddy shoe prints\n3. A vending machine\n4. The fire extinguisher area\n";
-		cout << "Enter the number: ";
+		waitSeconds(1);
+		cout << "\n--------------------------------\n";
+		cout << "SCENARIO 5 -- Service Corridor";
+		cout << "\n--------------------------------\n"; waitSeconds(1);
+		cout << "You enter the narrow staff-only passage.\nFootsteps echo.\n"; waitSeconds(1);
+		cout << "What do you follow?\n"; waitSeconds(1);
+		cout << "1. A dropped mop\n"; waitSeconds(1);
+		cout<<"2.The muddy shoe prints\n";waitSeconds(1);
+		cout << "3.A vending machine\n"; waitSeconds(1);
+		cout<<"4.The fire extinguisher area\n"; waitSeconds(1);
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "It belongs to cleaning staff.\n";
+			cout << "\nIt belongs to cleaning staff.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 2) {
-			cout << "Prints match Ayan s shoe size and lead deeper into the staff hallway.\n";
+			cout << "\nPrints match Ayan s shoe size and lead deeper into the staff hallway.\n"; waitSeconds(1);
 			cout << "useful clue\n";
 			++s;
 		}
 		else if (v1 == 3) {
-			cout << "Nothing behind it.\n";
+			cout << "\nNothing behind it.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 4) {
-			cout << "No signs of movement.\n";
+			cout << "\nNo signs of movement.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else {
 			cout << "invalid\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 		//ROUND 6
-		cout << "SCENARIO 6   Camera Room Door\n";
-		cout << "You find a restricted door labeled  Security Access Only. \n";
-		cout << "What do you do?\n1. Try to unlock it yourself\n2. Ask security to open it\n3. Knock repeatedly\n4. Ask Walk past it\n";
-		cout << "Enter the number: ";
+		waitSeconds(1);
+		cout << "\n--------------------------------\n";
+		cout << "SCENARIO 6 -- Camera Room Door";
+		cout << "\n--------------------------------\n"; waitSeconds(1);
+		cout << "You find a restricted door labeled  Security Access Only. \n"; waitSeconds(1);
+		cout << "What do you do?\n"; waitSeconds(1);
+		cout << "1.Try to unlock it yourself\n"; waitSeconds(1);
+		cout << "2.Ask security to open it\n"; waitSeconds(1);
+		cout << "3.Knock repeatedly\n"; waitSeconds(1);
+		cout << "4.Ask Walk past it\n"; waitSeconds(1);
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "Alarm triggers; time lost.\n";
+			cout << "\nAlarm triggers; time lost.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 2) {
-			cout << "Inside footage shows the red-jacket person leading " << name << " toward the storage hall.\n";
+			cout << "\nInside footage shows the red-jacket person leading " << name << " toward the storage hall.\n"; waitSeconds(1);
 			cout << "useful clue\n";
 			++s;
 		}
 		else if (v1 == 3) {
-			cout << "No one answers.\n";
+			cout << "\nNo one answers.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else if (v1 == 4) {
-			cout << "You miss the most useful camera footage.\n";
+			cout << "\nYou miss the most useful camera footage.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else {
 			cout << "invalid\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 		//ROUND 7
-		cout << "SCENARIO 7 -- Storage Hallway\n";
-		cout << "Dim lights flicker.\nYou spot something small on the floor.\n";
-		cout << "What do you inspect?\n1. A wrapper\n2. A loose wire\n3. A trolley\n4. " << name << " blue dinosaur toy\n";
-		cout << "Enter the number: ";
+		waitSeconds(1);
+		cout << "\n--------------------------------\n";
+		cout << "SCENARIO 7 -- Storage Hallway";
+		cout << "\n--------------------------------\n"; waitSeconds(1);
+		cout << "Dim lights flicker.\nYou spot something small on the floor.\n"; waitSeconds(1);
+		cout << "What do you inspect?\n"; waitSeconds(1);
+		cout << "1.A wrapper\n"; waitSeconds(1);
+		cout << "2.A loose wire\n"; waitSeconds(1);
+		cout << "3.A trolley\n"; waitSeconds(1);
+		cout << "4."<< name <<"blue dinosaur toy\n"; waitSeconds(1);
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "Just a snack wrapper.\n";
+			cout << "\nJust a snack wrapper.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 2) {
-			cout << "Maintenance issue-not a clue.\n";
+			cout << "\nMaintenance issue-not a clue.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 3) {
-			cout << "Empty and unrelated.\n";
+			cout << "\nEmpty and unrelated.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else if (v1 == 4) {
-			cout << name << " dropped this recently-he was here minutes ago.\n";
+			cout <<"\n"<< name << " dropped this recently-he was here minutes ago.\n"; waitSeconds(1);
 			cout << "useful clue";
 			++s;
 		}
@@ -510,91 +560,113 @@ void MissingChild(float& s) {
 		}
 		cout << "your current lives are " << s << endl;
 		//ROUND 8
-		cout << "SCENARIO 8   Back Loading Dock\n";
-		cout << "You reach a metal loading dock where delivery trucks park.\n";
-		cout << "Who do you talk to?\n1. The delivery driver standing near his truck\n2. Security guard (on break)\n3. Two workers chatting\n4. The cleaner\n";
-		cout << "Enter the number: ";
+		waitSeconds(1);
+		cout << "\n--------------------------------\n";
+		cout << "SCENARIO 8 -- Back Loading Dock";
+		cout << "\n--------------------------------\n"; waitSeconds(1);
+		cout << "You reach a metal loading dock where delivery trucks park.\n"; waitSeconds(1);
+		cout << "Who do you talk to?\n";
+		cout << "1.The delivery driver standing near his truck\n"; waitSeconds(1);
+		cout << "2.Security guard(on break)\n"; waitSeconds(1);
+		cout << "3.Two workers chatting\n"; waitSeconds(1);
+		cout << "4.The cleaner\n"; waitSeconds(1);
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "Driver saw a child being led toward the abandoned storage room.\n";
+			cout << "\nDriver saw a child being led toward the abandoned storage room.\n"; waitSeconds(1);
 			cout << "major clue\n";
 			++s;
 		}
 		else if (v1 == 2) {
-			cout << "He wasn t watching this area.\n";
+			cout << "\nHe wasn t watching this area.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 3) {
-			cout << "They didn t notice a child.\n";
+			cout << "\nThey didn t notice a child.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else if (v1 == 4) {
-			cout << "He only arrived recently.\n";
+			cout << "\nHe only arrived recently.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else {
 			cout << "invalid\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 		//ROUND 9
-		cout << "SCENARIO 9   Abandoned Storage Room\n";
-		cout << "The storage room is dark and dusty.\n";
-		cout << "Choose your approach?\n1. Open the supply closet\n2. Inspect the ceiling\n3. Look under a table\n4. Search the old crates\n";
-		cout << "Enter the number: ";
+		waitSeconds(1);
+		cout << "\n--------------------------------\n";
+		cout << "SCENARIO 9 -- Abandoned Storage Room";
+		cout << "\n--------------------------------\n"; waitSeconds(1);
+		cout << "The storage room is dark and dusty.\n"; waitSeconds(1);
+		cout << "Choose your approach?\n"; waitSeconds(1);
+		cout << "1.Open the supply closet\n"; waitSeconds(1);
+		cout << "2.Inspect the ceiling\n"; waitSeconds(1);
+		cout << "3.Look under a table\n"; waitSeconds(1);
+		cout << "4.Search the old crates\n"; waitSeconds(1);
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "You find " << name << "'s backpack inside-he is very close\n";
+			cout << "\nYou find" << name << "backpack inside-he is very close\n"; waitSeconds(1);
 			cout << "major clue\n";
 			++s;
 		}
 		else if (v1 == 2) {
-			cout << "No relevance.\n";
+			cout << "\nNo relevance.\n"; waitSeconds(1);
 			cout << "no useful observation made\n";
 			--s;
 		}
 		else if (v1 == 3) {
-			cout << "Just boxes.\n";
+			cout << "\nJust boxes.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else if (v1 == 4) {
-			cout << "Full of mall decorations.\n";
+			cout << "\nFull of mall decorations.\n"; waitSeconds(1);
 			cout << "no useful observation made";
 			--s;
 		}
 		else {
 			cout << "invalid\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 		//ROUND 10
-		cout << "SCENARIO 10   The Final Door\n";
-		cout << "You hear a faint sound from the utility room ahead.";
-		cout << "What do you do?\n1. Shout loudly\n2. Kick the door\n3. Enter slowly and call " << name << " s name\n4. Wait outside\n";
-		cout << "Enter the number: ";
+		waitSeconds(1);
+		cout << "\n--------------------------------\n";
+		cout << "SCENARIO 10 -- The Final Door";
+		cout << "\n--------------------------------\n"; waitSeconds(1);
+		cout << "You hear a faint sound from the utility room ahead."; waitSeconds(1);
+		cout << "What do you do?\n"; waitSeconds(1);
+		cout << "1.Shout loudly\n"; waitSeconds(1);
+		cout << "2.Kick the door\n"; waitSeconds(1);
+		cout << "3.Enter slowly and call" << name << "'s name\n"; waitSeconds(1);
+		cout << "4.Wait outside\n"; waitSeconds(1);
+		cout << "Enter your choice: ";
 		cin >> v1;
 		if (v1 == 1) {
-			cout << "Your shout scares him; she hides again.\n";
+			cout << "\nYour shout scares him; she hides again.\n"; waitSeconds(1);
 			cout << "You Lost The Case Detective!\n";
 			break;
 		}
 		else if (v1 == 2) {
-			cout << "Noise startles the child.\n";
+			cout << "\nNoise startles the child.\n"; waitSeconds(1);
 			cout << "You Lost The Case Detective!\n";
+			break;
 
 		}
 		else if (v1 == 3) {
-			cout << name << " runs into your arms. He is safe and unharmed.\n";
-			cout << "You find Ayan hidden behind cleaning equipment.\n";
-			cout << "He followed the stranger because  they said they would show him something cool.\nSecurity arrives.";
-			cout << "The red-jacket person is caught exiting the mall.\nYOU WIN   The child is found, safe and alive.\n";
-
+			cout<< name << " runs into your arms.He is safe and unharmed.\n"; waitSeconds(2);
+			cout << "You find Ayan hidden behind cleaning equipment.\n"; waitSeconds(2);
+			cout << "He followed the stranger because  they said they would show him something cool.\nSecurity arrives."; waitSeconds(2);
+			cout << "The red-jacket person is caught exiting the mall.\nYOU WIN   The child is found, safe and alive.\n"; waitSeconds(2);
+			break;
 		}
 		else if (v1 == 4) {
-			cout << "Time slips away.\n";
-			cout << "no useful observation made";
+			cout << "\nTime slips away.\n"; waitSeconds(1);
+			cout << "no useful observation made"; waitSeconds(1);
 			cout << "Time out!";
 			break;
 
@@ -602,12 +674,11 @@ void MissingChild(float& s) {
 		else {
 			cout << "invalid\n";
 		}
-		cout << "your current lives are " << s << endl;
+		cout << "\nyour current lives are " << s << endl;
 	}
 
 
 }
-
 
 
 
