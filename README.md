@@ -4,9 +4,9 @@
 
 **Project Title:** Detective Series  
 **Team Members:**
-- **Aliza Batool** –
-- **Abeeha Noor** – 
-- **Fatima Zahra Mustapha** –
+- **Aliza Batool** – Programmer 2; made modifications in the code eg added time delay function,wrote the readme 
+- **Abeeha Noor** – Programmer 1; designed base code and also made some logic corrections.Modified lms deliverable.
+- **Fatima Zahra Mustapha** – Logic designer; made flow chart.
 ## Program Description
 **Detective Series** is an interactive text-based mystery game where you play as a detective solving one of two criminal cases:
 
