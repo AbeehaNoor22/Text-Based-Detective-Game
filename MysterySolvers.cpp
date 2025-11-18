@@ -51,7 +51,7 @@ void DetectiveSeries() {
 void MurderCase(int s) {
 	int random, v1, v2, v3, v4, v5;
 	char restarter;
-	string name;
+	string name, decoded;
 	random = rand() % 3 + 1;
 	while (true) {
 		switch (random) {
@@ -74,17 +74,15 @@ void MurderCase(int s) {
 		waitSeconds(1);
 		cout << "The small coastal town of Westbridge was the kind of place where everyone knew everyone and nothing\n"; waitSeconds(3);
 		cout << "ever happened - until the night young" << name << "Harper was found dead near the old lighthouse cliffs.\n\n"; waitSeconds(3);
-
 		cout << "The town froze in shock." << name << "was kind,quiet,always sketching in his notebook.He had no enemies.\n\n"; waitSeconds(3);
 		cout << "Or so it seemed.\n\n"; waitSeconds(1);
-		cout << "You are called on the scene as the detective.\n";
-		cout << "You initially have 3 lives; every correct choice increases your number of lives and every wrong choice decreases it.\n";
+		cout << "You are called in as the detective.\n"; waitSeconds(1);
+		cout << "You initially have 3 chances; every incorrect choice decreases the number of chances\n\n"; waitSeconds(1);
 		cout << "Following are your key suspects:\n"; waitSeconds(1);
 		cout << "1.Mr. Hawthorne - The Lighthouse Keeper\n"; waitSeconds(1);
 		cout << "2.Aaron Blake - The School Bully\n"; waitSeconds(1);
 		cout << "3.Clara Harper -" << name << "Older Sister\n"; waitSeconds(1);
 		cout << "4.Daniel Reed - The Family Friend\n\n"; waitSeconds(1);
-
 
 		//ROUND 1
 		waitSeconds(1);
@@ -100,28 +98,28 @@ void MurderCase(int s) {
 		cin >> v1;
 		if (v1 == 1) {
 			cout << "\nYou found two sets of male footprints.\n"; waitSeconds(1);
-			cout << "Useful clue!\nYour lives have increased by one!\n"; waitSeconds(1);
-			++s;
+			cout << "Useful clue!\nLets proceed forward!\n"; waitSeconds(1);
 		}
 		else if (v1 == 2) {
 			cout << "\nHis last drawing shows a man near the lighthouse wearing a silver watch.\n"; waitSeconds(1);
-			cout << "Useful clue!\nYour lives have increased by one!\n"; waitSeconds(1);
-			++s;
+			cout << "Useful clue!\nLets proceed forward!\n"; waitSeconds(1);
+
 		}
 		else if (v1 == 3) {
 			cout << "\nCliff edge gives nothing new.\n"; waitSeconds(1);
-			cout << "No useful observation made.\n Your lives decreased by one1\n"; waitSeconds(1);
+			cout << "No useful observation made.\n Your chances decreased by one !\n"; waitSeconds(1);
 			--s;
 		}
 		else if (v1 == 4) {
 			cout << "\nBushes contain only seaweed.\n"; waitSeconds(1);
-			cout << "No useful observation made.\n Your lives decreased by one!\n"; waitSeconds(1);
+			cout << "No useful observation made.\n Your chances decreased by one!\n"; waitSeconds(1);
 			--s;
 		}
 		else {
 			cout << "Invalid choice\n";
 		}
-		cout << "\n\nYour current lives are " << s << endl; waitSeconds(1);
+		cout << "\n\nYour current chances are " << s << endl; waitSeconds(1);
+
 		//ROUND 2
 		waitSeconds(1);
 		cout << "\n----------------------------------------\n";
@@ -138,53 +136,48 @@ void MurderCase(int s) {
 		if (v2 == 1) {
 			cout << "\nClara breaks down,saying" << name << "was her whole world.\n";
 			cout << "She says he was scared of something recently but never told her what.\n"; waitSeconds(1);
-			cout << "No useful clue found.\nYour lives decreased by one!\n\n";
+			cout << "No useful clue found.\nYour chances decreased by one!\n\n";
 			--s;
 		}
 		else if (v2 == 2) {
 			cout << "\nAaron looks guilty, but admits" << name << "once stood up to him.\n";
 			cout << "He says he would never actually hurt him… and seems genuinely shaken.\n"; waitSeconds(1);
-			cout << "No useful clue found.\nYour lives decreased by one!\n";
+			cout << "No useful clue found.\nYour chances decreased by one!\n";
 			--s;
 		}
 		else if (v2 == 3) {
 			if (v1 == 1) {
-				cout << "You enquire for his shoes but their sole doesn't resembel those found in footprint trail, which confirms that it was not him.\n";
-				cout << "Useful clue found!\nYour lives have increased by one!\n\n";
-				++s;
+				cout << "You enquire for his shoes but their sole doesn't resembel those found in footprint trail, \nwhich confirms that it was not him.\n";
+				cout << "Useful clue found!\nLets proceed forward!\n\n";
 			}
 			else if (v1 == 2) {
 				cout << "\nHe shows his pocket watch old and rusted.\nIt does not match" << name << "drawing.\n"; waitSeconds(1);
-				cout << "Useful clue found.\nYour lives have increased by one!\n\n";
-				++s;
+				cout << "Useful clue found.\nLets proceed forward!\n\n";
 			}
 			else if (v1 == 3 || v1 == 4) {
 				cout << "\nYou interrogate but he seems shaken and replies emotionally.\n"; waitSeconds(1);
-				cout << "No useful clue found.\nYour lives decreased by one!\n\n";
+				cout << "No useful clue found.\nYour chances decreased by one!\n\n";
 				--s;
 			}
 		}
 		else if (v2 == 4) {
 			if (v1 == 1) {
 				cout << "You enquire for his shoes and their sole resembels those found in footprint trail.\n";
-				cout << "Useful clue found!\nYour lives have increased by one!\n\n";
-				++s;
+				cout << "Useful clue found!\nLets proceed forward!\n\n";
 			}
 			else if (v1 == 2) {
 				cout << "\nYou notice he wears a shiny silver wristwatch just like the drawing.\n"; waitSeconds(1);
 				cout << "Useful clue found!\n\n";
-				++s;
 			}
 			else if (v1 == 3 || v1 == 4) {
 				cout << "\nYou interrogate but he seems carefree and answers in an anxious manner.\n"; waitSeconds(1);
-				cout << "Useful observation!\nYour lives have increased by one!\n\n";
-				++s;
+				cout << "Useful observation!\nLets move forward!\n\n";
 			}
 		}
 		else {
 			cout << "\nInvalid choice\n\n";
 		}
-		cout << "\nYour current lives are " << s << endl;
+		cout << "\nYour current chances are " << s << endl;
 		//ROUND 3
 		waitSeconds(1);
 		cout << "\n----------------------------------------\n";
@@ -201,28 +194,26 @@ void MurderCase(int s) {
 		if (v3 == 1) {
 			cout << "\nYou found" << name << "backpack hidden under driftwood.\nInside is a letter he wrote about seeing someone steal money.\n"; waitSeconds(1);
 			cout << "Useful clue found!";
-			++s;
 		}
 		else if (v3 == 2) {
 			cout << "\nYou find a box of stolen community funds hidden in a cabinet.\n"; waitSeconds(1);
 			cout << "Useful clue found!\n";
-			++s;
 		}
 		else if (v3 == 3) {
 			cout << "\nHome contains nothing new.\n"; waitSeconds(1);
-			cout << "No useful clue found.\n";
+			cout << "No useful clue found.\nYour chances decrease by one!\n";
 			--s;
 		}
 		else if (v3 == 4) {
 			cout << "\nPier has only old nets.\n"; waitSeconds(1);
-			cout << "No useful clue found.\n";
+			cout << "No useful clue found.\nYour chances decrease by one!\n";
 			--s;
 		}
 		else {
 			cout << "\nInvalid choice\n";
 		}
-		cout << "\nYour current lives are " << s << endl;
-		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
+		cout << "\nYour current chances are " << s << endl;
+		if (s == 0) { cout << "Oops!Your out of chances detective!\n"; break; }
 		//ROUND 4
 		waitSeconds(1);
 		cout << "\n----------------------------------------\n";
@@ -238,34 +229,50 @@ void MurderCase(int s) {
 		if (v4 == 3) {
 			cout << "\nYou showed all the gathered evidences\nHe confesses in panic.\n"; waitSeconds(1);
 			cout << "Congrats detective!! You found the Murderer";
-			++s;
 		}
 		else if (v4 == 1) {
 			cout << "\nMr. Hawthorne's eyes widen with pain as you accuse him.\n"; waitSeconds(2);
 			cout << "\"Liam was like a grandson to me,\" he whispers. \"I’d never harm that boy.\"\n"; waitSeconds(2);
 			cout << "Your accusation shakes him deeply, but reveals nothing new.\n"; waitSeconds(1);
-			cout << "Wrong deduction detective :(\n";
+			cout << "Wrong deduction Detective :(\n";
 			--s;
 		}
 		else if (v4 == 2) {
 			cout << "\nAaron steps back, looking terrified rather than angry.\n"; waitSeconds(2);
 			cout << "\"I know I bullied him... but I’d never kill him,\" he says with a cracked voice.\n"; waitSeconds(2);
 			cout << "He starts crying, offering no useful information.\n"; waitSeconds(1);
-			cout << "Wrong deduction detective :(\n";
+			cout << "Wrong deduction Detective :(\n";
 			--s;
 		}
 		else if (v4 == 4) {
 			cout << "\nClara stares at you in disbelief, tears welling in her eyes.\n"; waitSeconds(2);
 			cout << "\"You're accusing me of killing my own brother?\" she whispers.\n"; waitSeconds(2);
 			cout << "She breaks down completely, but gives no new clues.\n"; waitSeconds(1);
-			cout << "Wrong deduction detective :(\n";
+			cout << "Wrong deduction Detective :(\n";
 			--s;
 		}
 		else {
 			cout << "\nInvalid\n";
 		}
-		cout << "\nyour current lives are " << s << endl;
-		if (s == 0) { cout << "Oops!Your out of lives detective!\n"; break; }
+		cout << "\nyour current chances are " << s << endl;
+		if (s == 0) { cout << "You have only kne chance to get a life Detective!\n"; }
+		//loop does not break even if lifes are 0 because the player gets one more chance to get mor lives
+		//BONUS ROUND
+		cout << "\n----------------------------------------\n";
+		cout << "  **BONUS ROUND** 			\n";
+		cout << "\n----------------------------------------\n"; waitSeconds(1);
+		cout << "Case-sensitive code is hidden in the following riddle\nHatch the code to catch a bonus life!:\n";
+		cout << "Some words don’t like to be understood at first glance.\n";
+		cout << "They've taken a tiny leap forward in their journey through the alphabet.\n";
+		cout << "To uncover the truth, you must guide each letter backward along the path it traveled-but only a five steps.\n";
+		cout << "The word is *Rzwijw*\n";
+		cin >> decoded;
+		if (decoded == "Murder") {
+			cout << "Amazing! You got a bonus chances!";
+			++s;
+			cout << "\n\nYour current chances are " << s << endl; waitSeconds(1);
+		}
+		if (s == 0) { cout << "Oops!You couldn't avail the bonus chance Detective!!\n"; break; }
 		//ROUND 5
 		waitSeconds(1);
 		cout << "\n----------------------------------------\n";
